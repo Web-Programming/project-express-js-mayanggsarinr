@@ -1,0 +1,11 @@
+{
+  "name": "aplikasi1",
+  "version": "1.0.0",
+  "description": "Ini adalah aplikasi node pertama saya",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mayang Sari Nr",
+  "license": "ISC"
+}
