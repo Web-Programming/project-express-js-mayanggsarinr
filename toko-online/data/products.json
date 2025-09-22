@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "name": "Laptop Gaming",
+        "price": 15000000,
+        "description": "Laptop gaming dengan spesifikasi tinggi untuk kebutuhan berat."
+    },
+    {
+        "id": 2,
+        "name": "Smartphone Flagship",
+        "price": 12000000,
+        "description": "Smartphone terbaru dengan kamera canggih dan performa tinggi."
+    },
+    {
+        "id": 3,
+        "name": "Smart TV 50 Inch",
+        "price": 7000000,
+        "description": "Smart TV 4K dengan fitur streaming dan konektivitas lengkap."
+    },
+    {
+        "id": 4,
+        "name": "Headphone Noise Cancelling",
+        "price": 2500000,
+        "description": "Headphone dengan fitur noise cancelling untuk pengalaman audio premium."
+    },
+    {
+        "id": 5,
+        "name": "Kipas Angin Portable",
+        "price": 350000,
+        "description": "Kipas angin kecil, praktis untuk dibawa ke mana-mana."
+    },
+    {
+        "id": 6,
+        "name": "Mesin Cuci Otomatis",
+        "price": 3500000,
+        "description": "Mesin cuci dengan teknologi hemat air dan energi."
+    },
+    {
+        "id": 7,
+        "name": "Kamera Mirrorless",
+        "price": 9000000,
+        "description": "Kamera compact dengan kualitas gambar setara DSLR."
+    },
+    {
+        "id": 8,
+        "name": "Keyboard Mechanical",
+        "price": 800000,
+        "description": "Keyboard gaming dengan switch mekanik dan pencahayaan RGB."
+    },
+    {
+        "id": 9,
+        "name": "Monitor 27 Inch",
+        "price": 3000000,
+        "description": "Monitor Full HD dengan refresh rate tinggi untuk gaming dan produktivitas."
+    },
+    {
+        "id": 10,
+        "name": "Blender Serbaguna",
+        "price": 500000,
+        "description": "Blender untuk jus, smoothie, dan makanan bayi dengan motor kuat."
+    }
+]
