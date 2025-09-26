@@ -24,6 +24,8 @@ app.use('/bootstrap', express.static(path.join(__dirname,'node_modules/bootsrtap
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+var productRouter = require("./route/product"); //letaklkan di atas agar rapi
+app.use("/produk", productRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
