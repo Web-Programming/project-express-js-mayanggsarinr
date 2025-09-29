@@ -1,7 +1,8 @@
 var express = require('express');
 //fungsi require bisa untuk mengimpor resource selain import dari jsnya
 var router = express.Router();
-var products = require('../data/products.json');
+var products = require('../../data/products.json');
+var mainController = require("../controllers/main");
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -9,6 +10,8 @@ router.get('/', function(req, res, next) {
     title: 'Toko Online Sederhana', 
     products: products});
 });
+
+router.get("/", mainController.index);
 
 router.get("/search", function(req, res, next){
   //tulis kode untuk mendapatkan query pencarian 'q' dari req.query
