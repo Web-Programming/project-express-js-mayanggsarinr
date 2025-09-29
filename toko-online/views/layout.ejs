@@ -3,55 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= tittle %></title>
-    <% layout('layout') %>
-    <link rel="stylesheet" href="bootsrap/css/bootsrtap.min.css">
+    <title></title>
+    <link rel="stylesheet" href="http://localhost:3000/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
-
-    <!-- Navbar ambil dari getbootsrap-->>
+    <!-- Navbar dapat diambil dari getbootstrap -->
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <form action="/search" method="GET">
-            <input type="text" name="q" placeholder="Cari produk..." required>
-            <button type="submit">Cari</button>
-        </form>
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="#">Toko Online</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Link</a>
+                        <a class="nav-link" aria-current="page" href="#">Keranjang</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
-                    </li>
+                    <!-- tambahkan form pencarian yang mengarah ke route/search menggunakan method get -->
+                    <form action="/search" method="get" class="d-flex mb-3">
+                        <input type="text" name="q" class="form-control me-2" placeholder="Cari produk..." 
+                        value="<%= typeof query !== 'undefined' ? query : '' %>">
+                        <button type="submit" class="btn btn-primary">Cari</button>
+                        <!-- Logika Filtering jika query kosong maka tampilkan semua produk, jika ada query maka filter berdasarkan nama produk (gunakan inludes ubah ke lowercase) -->
+                    </form>
                 </ul>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-                </form>
             </div>
         </div>
     </nav>
     
     <%- body %>
-    <script src="bootsrap/js/bootsrtap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
