@@ -10,6 +10,7 @@ require("./app_toko_online/models/db");
 var indexRouter = require('./app_toko_online/routes/index');
 var usersRouter = require('./app_toko_online/routes/users');
 var productRouter = require("./app_toko_online/routes/product"); //letakkan di atas agar rapi
+var apiProductRouter = require("./app_toko_online/routes/api/product");
 var engine = require('ejs-blocks'); //menggunakan ejs block
 var app = express();
 
@@ -29,6 +30,7 @@ app.use('/bootstrap', express.static(path.join(__dirname,'node_modules/bootstrap
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/produk", productRouter);
+app.use("/api/produk", apiProductRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

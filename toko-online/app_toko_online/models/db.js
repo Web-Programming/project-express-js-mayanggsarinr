@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const dbURI = "mongodb://localhost:27017/pawII-SI5C";
+const dbURI = "mongodb+srv://mayanggsarinr_db_user:Aa112288z@cluster0.t5iuafp.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 mongoose.connect(dbURI, {});
 mongoose.connection.on("connected", () => {
