@@ -1,16 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const productController = require("../../controllers/product");
+console.log(productController);
 
-function requireJson(req, res, next){
-  if(req.header['content-type'] != 'application/json'){
-    return res.status(406).josn({
-              status:false, 
-              message: "Header harus application/json"
-          });
-  }
-  next();
-}
 //url create - POST (/api/produk)
 router.post("/", productController.create);
 //url read all - GET (/api/produk)
