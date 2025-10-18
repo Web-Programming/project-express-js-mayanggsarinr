@@ -1,8 +1,6 @@
 var users = require('../../data/products.json');
 var User = require("../models/users");
 
-const User = require("../models/user");
-
 const index = async (req, res) => {
   try {
     const users = await User.find({});
@@ -10,7 +8,7 @@ const index = async (req, res) => {
       title: 'Daftar User - Dari MongoDB',
       users: users
     });
-  }catch(err) {
+  } catch (err) {
     res.status(500).send("Gagal memuat user");
   }
 };

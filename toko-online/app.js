@@ -12,6 +12,7 @@ var usersRouter = require('./app_toko_online/routes/users');
 var productRouter = require("./app_toko_online/routes/product"); //letakkan di atas agar rapi
 var apiProductRouter = require("./app_toko_online/routes/api/product"); //import route api
 var apiUserRouter = require("./app_toko_online/routes/api/user"); //import route api user baru
+var apiOrderRouter = require("./app_toko_online/routes/api/order"); //import route api order baru
 var engine = require('ejs-blocks'); //menggunakan ejs block
 var app = express();
 
@@ -26,21 +27,22 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 //serving bootstrap
-app.use('/bootstrap', express.static(path.join(__dirname,'node_modules/bootstrap/dist')));
+app.use('/bootstrap', express.static(path.join(__dirname, 'node_modules/bootstrap/dist')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use("/produk", productRouter);
 app.use("/api/produk", apiProductRouter); //daftarkan route api
 app.use("/api/users", apiUserRouter); //daftarkan route api user sesuai permintaan
+app.use("/api/orders", apiOrderRouter); //datarkan route api order sesuai permintaan
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   next(createError(404));
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res, next) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};
