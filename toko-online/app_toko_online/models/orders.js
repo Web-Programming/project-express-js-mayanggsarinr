@@ -1,22 +1,5 @@
 const mongoose = require("mongoose");
 
-const orderItemSchema = new mongoose.Schema({
-    product: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product',
-        required: [true, "Produk harus diisi"]
-    },
-    quantity: {
-        type: Number,
-        required: [true, "Jumlah harus diisi"],
-        min: [1, "Minimal jumlah adalah 1"]
-    },
-    priceAtOrder: {
-        type: Number,
-        required: [true, "Harga saat pemesanan harus diisi"]
-    }
-}, { _id: false }); // _id: false agar subdokumen tidak memiliki _id sendiri
-
 const orderSchema = new mongoose.Schema({
     user: {
         type: mongoose.Schema.Types.ObjectId,
@@ -24,7 +7,24 @@ const orderSchema = new mongoose.Schema({
         required: [true, "User harus diisi"]
     },
     orderItems: {
-        type: [orderItemSchema],
+        type: [
+            {
+                product: {
+                    type: mongoose.Schema.Types.ObjectId,
+                    ref: 'Product',
+                    required: [true, "Produk harus diisi"]
+                },
+                quantity: {
+                    type: Number,
+                    required: [true, "Jumlah harus diisi"],
+                    min: [1, "Minimal jumlah adalah 1"]
+                },
+                priceAtOrder: {
+                    type: Number,
+                    required: [true, "Harga saat pemesanan harus diisi"]
+                }
+            }
+        ],
         required: [true, "Item pesanan harus diisi"],
         validate: [array => array.length > 0, "Minimal satu item harus dipesan"]
     },
